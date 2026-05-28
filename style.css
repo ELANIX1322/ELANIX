@@ -16,6 +16,9 @@ header {
     align-items: center;
     padding: 20px 50px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
@@ -179,7 +182,121 @@ header nav a.btn-contacto:hover {
 }
 
 /* ==========================================
-   3. PÁGINA DE CONTACTO (Formulario Oscuro)
+   3. NUEVA SECCIÓN: CÓMO TRABAJAMOS (Proceso)
+   ========================================== */
+.proceso-seccion {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #0d1b2a; /* Alternamos fondo para dar ritmo visual */
+    border-top: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
+}
+
+.proceso-seccion h2 {
+    font-size: 34px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.proceso-seccion > p {
+    color: #94a3b8;
+    margin-bottom: 50px;
+}
+
+.pasos-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.paso-tarjeta {
+    background: #08121e; /* Tarjetas oscuras invertidas */
+    padding: 35px 25px;
+    border-radius: 16px;
+    border: 1px solid #1e293b;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.paso-numero {
+    width: 45px;
+    height: 45px;
+    background-color: #ff3344;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255, 51, 68, 0.4); /* Resplandor de número cyber */
+}
+
+.paso-tarjeta h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.paso-tarjeta p {
+    color: #94a3b8;
+    font-size: 14.5px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   4. NUEVA SECCIÓN: PREGUNTAS FRECUENTES (FAQs)
+   ========================================== */
+.faqs-seccion {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.faqs-seccion h2 {
+    font-size: 34px;
+    color: #ffffff;
+    margin-bottom: 45px;
+}
+
+.faqs-contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    background-color: #0d1b2a;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #1e293b;
+    border-left: 5px solid #ff3344; /* El acento rojo de ELANIX a la izquierda */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.faq-item h3 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 15px;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ==========================================
+   5. PÁGINA DE CONTACTO (Formulario Oscuro)
    ========================================== */
 .contenedor-contacto {
     display: flex;
@@ -232,39 +349,4 @@ header nav a.btn-contacto:hover {
     border-radius: 8px;
     font-size: 15px;
     box-sizing: border-box;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    background-color: #08121e; /* El interior de los inputs es negro azulado */
-    color: #ffffff;
-}
-
-/* Enfoque de campos en modo oscuro */
-.grupo-input input:focus, 
-.grupo-input select:focus, 
-.grupo-input textarea:focus {
-    outline: none;
-    border-color: #ff3344; /* Se iluminan en rojo al escribir */
-    box-shadow: 0 0 0 3px rgba(255, 51, 68, 0.2);
-}
-
-/* Botón de Enviar por WhatsApp */
-.btn-enviar {
-    background-color: #ff3344;
-    color: #ffffff;
-    border: none;
-    padding: 15px;
-    width: 100%;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
-    box-shadow: 0 4px 15px rgba(255, 51, 68, 0.3);
-}
-
-.btn-enviar:hover {
-    background-color: #e02233;
-}
-
-.btn-enviar:active {
-    transform: scale(0.98);
 }
