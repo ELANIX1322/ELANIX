@@ -1,0 +1,270 @@
+/* ==========================================
+   1. ESTILOS GENERALES (Fondo Negro Azulado)
+   ========================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #08121e; /* Negro azulado profundo de fondo general */
+    margin: 0;
+    color: #f8f9fa; /* Texto general en blanco grisáceo para que resalte */
+}
+
+/* Navegación Superior */
+header {
+    background-color: #0d1b2a; /* Azul oscuro para el menú */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff; /* Logo en Blanco */
+    letter-spacing: 1px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #cbd5e1;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ff3344; /* Rojo brillante al pasar el cursor */
+}
+
+/* Botón especial de contacto en el menú */
+header nav a.btn-contacto {
+    border: 2px solid #ff3344; /* Borde Rojo */
+    color: #ff3344;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header nav a.btn-contacto:hover {
+    background-color: #ff3344;
+    color: #ffffff;
+}
+
+/* ==========================================
+   2. PÁGINA PRINCIPAL (Hero y Servicios)
+   ========================================== */
+
+/* Sección de Bienvenida (Hero) */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(180deg, #0d1b2a 0%, #08121e 100%); /* Degradado suave */
+    color: #ffffff;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 40px;
+    color: #94a3b8; /* Gris azulado suave */
+}
+
+/* Botón principal de Cotizar (Rojo Neón) */
+.btn-principal {
+    background-color: #ff3344; 
+    color: #ffffff !important;
+    padding: 16px 36px;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(255, 51, 68, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.btn-principal:hover {
+    background-color: #e02233; 
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(255, 51, 68, 0.6);
+}
+
+/* Sección de Servicios */
+.servicios {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.servicios h2 {
+    font-size: 34px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.servicios > p {
+    color: #94a3b8;
+    margin-bottom: 50px;
+}
+
+/* Contenedor de Tarjetas */
+.tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Enlaces de las Tarjetas */
+.tarjeta-link {
+    text-decoration: none;
+    color: inherit;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+/* Tarjetas en entorno oscuro */
+.tarjeta {
+    background: #0d1b2a; /* Azul oscuro cyber para las tarjetas */
+    padding: 40px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    border: 1px solid #1e293b;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    color: #94a3b8;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Botón interno "Solicitar ->" */
+.btn-tarjeta {
+    color: #ff3344;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+/* Efectos Hover Tarjetas Oscuras */
+.tarjeta-link:hover .tarjeta {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(255, 51, 68, 0.15);
+    border-color: #ff3344; /* El borde se ilumina en rojo al pasar el mouse */
+}
+
+.tarjeta-link:hover .btn-tarjeta {
+    transform: translateX(6px);
+}
+
+/* ==========================================
+   3. PÁGINA DE CONTACTO (Formulario Oscuro)
+   ========================================== */
+.contenedor-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px 20px;
+}
+
+.tarjeta-formulario {
+    background: #0d1b2a; /* Mismo azul oscuro cyber */
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    max-width: 500px;
+    width: 100%;
+    border-top: 5px solid #ff3344; /* Línea roja brillante arriba */
+}
+
+.tarjeta-formulario h2 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.tarjeta-formulario p {
+    color: #94a3b8;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.grupo-input {
+    margin-bottom: 23px;
+}
+
+.grupo-input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+.grupo-input input, 
+.grupo-input select, 
+.grupo-input textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #08121e; /* El interior de los inputs es negro azulado */
+    color: #ffffff;
+}
+
+/* Enfoque de campos en modo oscuro */
+.grupo-input input:focus, 
+.grupo-input select:focus, 
+.grupo-input textarea:focus {
+    outline: none;
+    border-color: #ff3344; /* Se iluminan en rojo al escribir */
+    box-shadow: 0 0 0 3px rgba(255, 51, 68, 0.2);
+}
+
+/* Botón de Enviar por WhatsApp */
+.btn-enviar {
+    background-color: #ff3344;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 15px rgba(255, 51, 68, 0.3);
+}
+
+.btn-enviar:hover {
+    background-color: #e02233;
+}
+
+.btn-enviar:active {
+    transform: scale(0.98);
+}

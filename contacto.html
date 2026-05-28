@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - ELANIX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">ELANIX</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="index.html#servicios">Servicios</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-contacto">
+        <div class="tarjeta-formulario">
+            <h2>¡Vamos a darle vida a tu proyecto!</h2>
+            <p>Cuéntanos qué necesitas y te enviaremos una cotización a la medida.</p>
+            
+            <form id="formWhatsApp" class="formulario">
+                <div class="grupo-input">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" placeholder="juan@empresa.com" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="servicio">¿Qué servicio te interesa?</label>
+                    <select id="servicio">
+                        <option value="Apps Móviles (iOS y Android)">Apps Móviles (iOS y Android)</option>
+                        <option value="Sistemas Web de Administración">Sistemas Web de Administración</option>
+                        <option value="Páginas Web / Tiendas Online">Páginas Web / Tiendas Online</option>
+                    </select>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="mensaje">Cuéntanos un poco sobre tu idea</label>
+                    <textarea id="mensaje" rows="4" placeholder="Ej. Necesito una app para que mis clientes agenden citas..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar por WhatsApp</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('formWhatsApp').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que la página se recargue
+
+            // Número de WhatsApp (Asegúrate de agregar el código de tu país al inicio, ej: 52 para México)
+            const miNumero = "5647559385"; 
+
+            // Capturar datos del usuario
+            const nombre = document.getElementById('nombre').value;
+            const correo = document.getElementById('correo').value;
+            const servicio = document.getElementById('servicio').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Armar el texto con saltos de línea (\n)
+            const textoMensaje = `¡Hola ELANIX! 🚀\n\n` +
+                                 `Me interesa una cotización.\n\n` +
+                                 `*Nombre:* ${nombre}\n` +
+                                 `*Correo:* ${correo}\n` +
+                                 `*Servicio:* ${servicio}\n` +
+                                 `*Detalles:* ${mensaje}`;
+
+            // encodeURIComponent limpia los espacios y saltos de línea para que WhatsApp los lea bien
+            const textoCodificado = encodeURIComponent(textoMensaje);
+
+            // Enlace universal wa.me (más compatible y estable)
+            const url = `https://wa.me/${miNumero}?text=${textoCodificado}`;
+
+            // Abrir el chat en una nueva pestaña
+            window.open(url, '_blank');
+        });
+    </script>
+
+</body>
+</html>
