@@ -1,218 +1,196 @@
 /* ==========================================
-   VARIABLES Y CONFIGURACIÓN (Cyber Theme)
+   1. ESTILOS GENERALES (Fondo Negro Azulado)
    ========================================== */
-:root {
-    --bg-main: #08121e;       /* Negro azulado profundo */
-    --bg-surface: #0d1b2a;    /* Azul oscuro cyber */
-    --border-color: #1e293b;  /* Borde sutil */
-    --text-main: #ffffff;     /* Blanco puro */
-    --text-muted: #94a3b8;    /* Gris azulado suave */
-    --text-nav: #cbd5e1;      /* Blanco grisáceo */
-    --accent: #ff3344;        /* Rojo Neón */
-    --accent-hover: #e02233;  /* Rojo Neón Oscuro */
-    --shadow-neon: rgba(255, 51, 68, 0.3);
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-nav);
-    line-height: 1.6;
-    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #08121e; /* Negro azulado profundo de fondo general */
+    margin: 0;
+    color: #f8f9fa; /* Texto general en blanco grisáceo para que resalte */
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
 }
 
-/* ==========================================
-   1. NAVEGACIÓN SUPERIOR
-   ========================================== */
+/* Navegación Superior */
 header {
-    background-color: rgba(13, 27, 42, 0.85); /* Efecto translúcido */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(13, 27, 42, 0.9); /* Azul oscuro con ligera transparencia */
+    backdrop-filter: blur(10px); /* Efecto esmerilado moderno */
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+    padding: 20px 50px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+    border-bottom: 1px solid #1e293b; /* Línea divisoria sutil */
 }
 
 .logo {
     font-size: 24px;
-    font-weight: 800;
-    color: var(--text-main);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    font-weight: bold;
+    color: #ffffff; /* Logo en Blanco */
+    letter-spacing: 1.5px; /* Un poco más de espacio */
+    text-transform: uppercase; /* Toque más profesional */
 }
 
 header nav a {
     text-decoration: none;
-    color: var(--text-nav);
+    color: #cbd5e1;
+    margin-left: 20px;
     font-weight: 500;
-    font-size: 15px;
     transition: color 0.3s ease;
 }
 
 header nav a:hover {
-    color: var(--accent);
+    color: #ff3344; /* Rojo brillante al pasar el cursor */
 }
 
+/* Botón especial de contacto en el menú */
 header nav a.btn-contacto {
-    border: 2px solid var(--accent);
-    color: var(--accent);
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid #ff3344; /* Borde Rojo */
+    color: #ff3344;
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 header nav a.btn-contacto:hover {
-    background-color: var(--accent);
-    color: var(--text-main);
-    box-shadow: 0 0 15px var(--shadow-neon);
+    background-color: #ff3344;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 51, 68, 0.4); /* Resplandor neón en menú */
 }
 
 /* ==========================================
    2. PÁGINA PRINCIPAL (Hero y Servicios)
    ========================================== */
 
-/* Hero */
+/* Sección de Bienvenida (Hero) */
 .hero {
     text-align: center;
-    padding: 140px 20px 100px;
-    background: radial-gradient(circle at top, #112235 0%, var(--bg-main) 70%);
-    color: var(--text-main);
+    padding: 140px 20px; /* Un poco más de aire superior e inferior */
+    background: radial-gradient(circle at top, #112235 0%, #08121e 100%); /* Degradado radial para centrar la atención */
+    color: #ffffff;
 }
 
 .hero h1 {
-    font-size: clamp(32px, 5vw, 54px); /* Elástico para móviles */
+    font-size: 48px; /* Ligeramente más grande */
     margin-bottom: 20px;
-    font-weight: 800;
-    letter-spacing: -1px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
     line-height: 1.2;
 }
 
 .hero p {
-    font-size: clamp(16px, 2vw, 20px);
+    font-size: 19px;
     margin-bottom: 40px;
-    color: var(--text-muted);
-    max-width: 600px;
+    color: #94a3b8; /* Gris azulado suave */
+    max-width: 700px; /* Evita que el texto se estire demasiado */
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Botón de Cotizar */
+/* Botón principal de Cotizar (Rojo Neón) */
 .btn-principal {
-    display: inline-block;
+    display: inline-block; /* Asegura que el padding funcione bien como enlace */
     text-decoration: none;
-    background-color: var(--accent);
-    color: var(--text-main) !important;
-    padding: 16px 40px;
-    font-weight: 700;
-    font-size: 16px;
-    border-radius: 50px;
-    box-shadow: 0 4px 20px var(--shadow-neon);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    letter-spacing: 0.5px;
+    background-color: #ff3344; 
+    color: #ffffff !important;
+    padding: 16px 38px;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(255, 51, 68, 0.4);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s, background-color 0.2s;
 }
 
 .btn-principal:hover {
-    background-color: var(--accent-hover);
+    background-color: #e02233; 
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(255, 51, 68, 0.5);
+    box-shadow: 0 8px 25px rgba(255, 51, 68, 0.6);
 }
 
-/* Servicios */
+/* Sección de Servicios */
 .servicios {
-    padding: 100px 20px;
+    padding: 100px 20px; /* Mayor separación entre secciones */
     text-align: center;
 }
 
 .servicios h2 {
-    font-size: clamp(28px, 4vw, 38px);
-    color: var(--text-main);
+    font-size: 36px;
+    color: #ffffff;
     margin-bottom: 12px;
-    font-weight: 700;
 }
 
 .servicios > p {
-    color: var(--text-muted);
+    color: #94a3b8;
     margin-bottom: 60px;
     font-size: 16px;
 }
 
-/* Grid de Tarjetas */
+/* Contenedor de Tarjetas */
 .tarjetas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 10px;
 }
 
+/* Enlaces de las Tarjetas */
 .tarjeta-link {
     text-decoration: none;
     color: inherit;
-    display: flex;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    display: flex; /* Permite que todas las tarjetas midan lo mismo de alto */
 }
 
+/* Tarjetas en entorno oscuro */
 .tarjeta {
-    background: var(--bg-surface);
-    padding: 40px 30px;
-    border-radius: 20px;
+    background: #0d1b2a; /* Azul oscuro cyber para las tarjetas */
+    padding: 40px 25px;
+    border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--border-color);
-    width: 100%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s, border-color 0.3s;
+    border: 1px solid #1e293b;
+    height: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .tarjeta h3 {
-    font-size: 22px;
-    color: var(--text-main);
+    font-size: 24px;
+    color: #ffffff;
+    margin-top: 0;
     margin-bottom: 15px;
-    font-weight: 600;
 }
 
 .tarjeta p {
-    color: var(--text-muted);
+    color: #94a3b8;
     font-size: 15px;
     line-height: 1.6;
-    margin-bottom: 30px;
-    flex-grow: 1; /* Empuja el botón hacia abajo para alinearlos */
+    margin-bottom: 25px;
+    flex-grow: 1; /* Hace que el texto use el espacio sobrante y alinee los botones abajo */
 }
 
+/* Botón interno "Solicitar ->" */
 .btn-tarjeta {
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 15px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
+    color: #ff3344;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
     transition: transform 0.2s ease;
 }
 
-/* Hover Tarjetas */
+/* Efectos Hover Tarjetas Oscuras */
 .tarjeta-link:hover .tarjeta {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(255, 51, 68, 0.12);
-    border-color: var(--accent);
+    transform: translateY(-8px); /* Elevación más sutil y elegante */
+    box-shadow: 0 15px 35px rgba(255, 51, 68, 0.15);
+    border-color: #ff3344; /* El borde se ilumina en rojo al pasar el mouse */
 }
 
 .tarjeta-link:hover .btn-tarjeta {
@@ -220,82 +198,82 @@ header nav a.btn-contacto:hover {
 }
 
 /* ==========================================
-   3. SECCIÓN: CÓMO TRABAJAMOS (Proceso)
+   3. NUEVA SECCIÓN: CÓMO TRABAJAMOS (Proceso)
    ========================================== */
 .proceso-seccion {
     padding: 100px 20px;
     text-align: center;
-    background-color: var(--bg-surface);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    background-color: #0d1b2a; /* Alternamos fondo para dar ritmo visual */
+    border-top: 1px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
 }
 
 .proceso-seccion h2 {
-    font-size: clamp(28px, 4vw, 38px);
-    color: var(--text-main);
+    font-size: 34px;
+    color: #ffffff;
     margin-bottom: 12px;
-    font-weight: 700;
 }
 
 .proceso-seccion > p {
-    color: var(--text-muted);
+    color: #94a3b8;
     margin-bottom: 60px;
-    font-size: 16px;
 }
 
 .pasos-contenedor {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 10px;
 }
 
 .paso-tarjeta {
-    background: var(--bg-main);
-    padding: 40px 30px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
+    background: #08121e; /* Tarjetas oscuras invertidas */
+    padding: 35px 25px;
+    border-radius: 16px;
+    border: 1px solid #1e293b;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
     text-align: left;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
 }
 
 .paso-tarjeta:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px); /* Pequeña respuesta interactiva */
 }
 
 .paso-numero {
-    width: 50px;
-    height: 50px;
-    background-color: var(--accent);
-    color: var(--text-main);
+    width: 45px;
+    height: 45px;
+    background-color: #ff3344;
+    color: #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 800;
+    font-weight: bold;
     font-size: 18px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 20px var(--shadow-neon);
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(255, 51, 68, 0.5); /* Resplandor de número cyber mejorado */
 }
 
 .paso-tarjeta h3 {
-    color: var(--text-main);
+    color: #ffffff;
     font-size: 20px;
     margin-bottom: 12px;
-    font-weight: 600;
 }
 
 .paso-tarjeta p {
-    color: var(--text-muted);
-    font-size: 15px;
+    color: #94a3b8;
+    font-size: 14.5px;
     line-height: 1.6;
 }
 
 /* ==========================================
-   4. SECCIÓN: PREGUNTAS FRECUENTES (FAQs)
+   4. NUEVA SECCIÓN: PREGUNTAS FRECUENTES (FAQs)
    ========================================== */
 .faqs-seccion {
     padding: 100px 20px;
@@ -303,46 +281,44 @@ header nav a.btn-contacto:hover {
 }
 
 .faqs-seccion h2 {
-    font-size: clamp(28px, 4vw, 38px);
-    color: var(--text-main);
+    font-size: 34px;
+    color: #ffffff;
     margin-bottom: 50px;
-    font-weight: 700;
 }
 
 .faqs-contenedor {
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: left;
-    padding: 0 10px;
 }
 
 .faq-item {
-    background-color: var(--bg-surface);
+    background-color: #0d1b2a;
     padding: 25px 30px;
-    border-radius: 16px;
+    border-radius: 12px;
     margin-bottom: 20px;
-    border: 1px solid var(--border-color);
-    border-left: 5px solid var(--accent);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #1e293b;
+    border-left: 5px solid #ff3344; /* El acento rojo de ELANIX a la izquierda */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
 }
 
 .faq-item:hover {
-    transform: translateX(4px);
-    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+    transform: translateX(5px); /* Se mueve un poco a la derecha al pasar el mouse */
 }
 
 .faq-item h3 {
     font-size: 18px;
-    color: var(--text-main);
-    margin-bottom: 12px;
-    font-weight: 600;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
 .faq-item p {
     font-size: 15px;
-    color: var(--text-muted);
+    color: #94a3b8;
     line-height: 1.6;
+    margin: 0;
 }
 
 /* ==========================================
@@ -352,114 +328,83 @@ header nav a.btn-contacto:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 85vh;
+    min-height: 80vh;
     padding: 60px 20px;
 }
 
 .tarjeta-formulario {
-    background: var(--bg-surface);
+    background: #0d1b2a; /* Mismo azul oscuro cyber */
     padding: 45px 40px;
-    border-radius: 24px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-    max-width: 520px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    max-width: 500px;
     width: 100%;
-    border-top: 5px solid var(--accent);
-    border: 1px solid rgba(30, 41, 59, 0.6);
+    border-top: 5px solid #ff3344; /* Línea roja brillante arriba */
+    border-left: 1px solid rgba(30, 41, 59, 0.5);
+    border-right: 1px solid rgba(30, 41, 59, 0.5);
+    border-bottom: 1px solid rgba(30, 41, 59, 0.5);
 }
 
 .tarjeta-formulario h2 {
-    color: var(--text-main);
+    margin-top: 0;
+    color: #ffffff;
     font-size: 32px;
     margin-bottom: 10px;
-    font-weight: 700;
 }
 
 .tarjeta-formulario p {
-    color: var(--text-muted);
+    color: #94a3b8;
     margin-bottom: 35px;
     font-size: 15px;
 }
 
 .grupo-input {
-    margin-bottom: 25px;
+    margin-bottom: 23px;
 }
 
 .grupo-input label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-weight: 600;
     font-size: 14px;
-    color: var(--text-nav);
-    letter-spacing: 0.3px;
+    color: #cbd5e1;
 }
 
 .grupo-input input, 
 .grupo-input select, 
 .grupo-input textarea {
     width: 100%;
-    padding: 14px 16px;
-    background-color: var(--bg-main);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
+    padding: 14px;
+    background-color: #08121e; /* Fondo oscuro interno para armonizar */
+    border: 1px solid #1e293b;
+    border-radius: 8px;
     font-size: 15px;
-    color: var(--text-main);
+    color: #ffffff; /* Texto que escribe el usuario en blanco */
+    box-sizing: border-box;
     outline: none;
-    transition: all 0.2s ease;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/* Efectos de Focus en Inputs */
+/* Efecto Focus para cuando el usuario hace clic en los campos */
 .grupo-input input:focus, 
 .grupo-input select:focus, 
 .grupo-input textarea:focus {
-    border-color: var(--accent);
+    border-color: #ff3344;
     box-shadow: 0 0 10px rgba(255, 51, 68, 0.2);
 }
 
 .grupo-input textarea {
-    resize: vertical;
-    min-height: 120px;
+    resize: vertical; /* Permite estirar hacia abajo pero no hacia los lados desconfigurando el diseño */
 }
 
-/* Adaptación del botón de envío si usas uno similar al principal */
-.tarjeta-formulario button {
-    width: 100%;
-    background-color: var(--accent);
-    color: var(--text-main);
-    border: none;
-    padding: 16px;
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px var(--shadow-neon);
-    transition: all 0.3s ease;
-}
-
-.tarjeta-formulario button:hover {
-    background-color: var(--accent-hover);
-    box-shadow: 0 6px 20px rgba(255, 51, 68, 0.5);
-}
-
-/* ==========================================
-   6. RESPONSIVIDAD (Media Queries)
-   ========================================== */
+/* Soporte de diseño responsivo básico para tablets/móviles */
 @media (max-width: 768px) {
     header {
-        padding: 15px 20px;
+        padding: 20px 25px;
     }
-    
-    header nav {
-        gap: 12px;
+    .hero h1 {
+        font-size: 36px;
     }
-
-    header nav a {
-        font-size: 14px;
-    }
-
-    header nav a.btn-contacto {
-        padding: 6px 14px;
-    }
-
     .tarjeta-formulario {
         padding: 30px 20px;
     }
